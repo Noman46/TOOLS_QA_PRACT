@@ -44,7 +44,9 @@ class WebTablesPage{
         return $$('//span[contains(@id,"edit-record")]')
     }
 
-
+    get searchField () {
+        return $('#searchBox');
+    }
 
     
 
@@ -82,6 +84,10 @@ class WebTablesPage{
     }
     async deleteCustomer (deleteButtonNumber) {
         await this.deleteButtons[deleteButtonNumber].click();
+    }
+
+    async searchByName (name) {
+        await this.searchField.clearValue().setValue(name)
     }
 
 }
